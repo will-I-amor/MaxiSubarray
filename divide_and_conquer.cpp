@@ -4,7 +4,7 @@ const int infinite = -10000;
 int findCrossingSum(int a[],int low, int mid,int high){
 	int sum = 0;
 	int left_sum = infinite;
-	for(int i = mid;i>0;i--){
+	for(int i = mid;i>=0;i--){//之前的bug，是因为写了i>0,少写了等号。结果大bug
 		sum = sum + a[i];
 		if(sum>left_sum){
 			left_sum = sum;
